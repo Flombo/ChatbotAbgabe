@@ -1,0 +1,21 @@
+﻿1. Worin unterscheiden sich conversational models vs retrieval-based models vs generative models ?
+    • Conversational models, stellen Modelle dar, welche natürlich wirkende Konversationen führen können.
+    • Modelle die auf vordefinierte Fragen feste Antworten geben können, werden Retrieval-based models genannt.
+    • Modelle, die selbsterstellte Antworten generieren können, werden Generative models genannt.
+
+2. Wie werden die Daten zur Verwendung im sequence-to-sequence model aufbereitet?
+- die Zeilennummern, Namen der Schauspieler und Abstands Symbole werden entfernt
+- Die Zeilen und Indizes werden gemappt
+- Selten aufkommende Wörter werden entfernt 
+- Konvertierung von Unicode zu ASCII
+- zu lange Sätze werden entfernt
+
+3. Wozu wird das sequence-to-sequence model verwendet?
+Es wird verwendet, um Antworten variabler Länge auf möglichst beliebige Inputs zu liefern. Dies geschieht, indem zwei rekurrente neurale Netze im Verbund arbeiten, wobei eines als Encoder, und eines als Decoder fungiert.
+
+4. Erklären sie das encoder und decoder model in zwei Sätzen.
+Der encoder Verarbeitet den Input den er bekommt in einen einzigen Vektor fester Länge namens Kontext Vektor, der die semantische Bedeutung des Inputs enthalten soll. Diesen Kontext Vektor wiederum nimmt der Decoder entgegen und entscheidet anhand diesem, wie der nächste Teil des inputs aussehen soll. 
+
+5. Erklären sie das greedy-search decoding module in zwei Sätzen.
+Beim greedy decoding wird der zunächst der Kontext Vektor vom Decoder ausgelesen. Anhand von diesem wird eine Antwort gewählt, welche die höchste Wahrscheinlichsten für einen "guten" Output besitzt.
+
